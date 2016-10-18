@@ -1,7 +1,7 @@
 {
   "name": "react-component-query",
   "version": "0.0.1",
-  "description": "React to component size changes.",
+  "description": "Component queries in React.",
   "main": "lib/react-component-query.js",
   "files": [
     "dist",
