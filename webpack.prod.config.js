@@ -33,7 +33,7 @@ var config = {
     publicPath: 'dist/',
     filename: 'react-component-query.js',
     sourceMapFilename: 'react-component-query.sourcemap.js',
-    library: 'withComponentQueries',
+    library: 'ReactComponentQuery',
     libraryTarget: 'umd'
   },
   module: {
