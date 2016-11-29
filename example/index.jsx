@@ -1,6 +1,6 @@
 import React, { Component, PropTypes, Children } from 'react'
 import ReactDOM from 'react-dom'
-import withComponentQueries from '../src/react-component-query'
+import { matchedProps, withComponentQueries } from '../src/react-component-query'
 
 import './main.scss';
 
@@ -14,11 +14,39 @@ const MyComponent = withComponentQueries(({ queries: { fullWidth } }) => (
   }
 })
 
+class MyOtherComponent extends Component {
+  render() {
+    const { viewsToShow } = matchedProps(this.props.queries, {
+      sm: {
+        viewsToShow: 1
+      },
+      md: {
+        viewsToShow: 2
+      },
+      lg: {
+        viewsToShow: 3
+      }
+    })
+
+    return (
+      <div>
+        <span>{viewsToShow}</span>
+      </div>
+    )
+  }
+}
+MyOtherComponent = withComponentQueries(MyOtherComponent, {
+  sm: { minWidth: 300 },
+  md: { minWidth: 600 },
+  lg: { minWidth: 900 }
+})
+
 class App extends Component {
   render() {
     return (
       <div>
         <MyComponent/>
+        <MyOtherComponent/>
       </div>
     )
   }
