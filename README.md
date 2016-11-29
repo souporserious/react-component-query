@@ -14,6 +14,32 @@ This library is heavily inspired by [React Container Query](https://github.com/d
 (UMD library exposed as `withComponentQueries`)
 ```
 
+## Example Usage
+
+```js
+import { matchedProps, withComponentQueries } from 'react-component-query'
+
+class MyResponsiveComponent extends Component {
+  render() {
+    const { viewsToShow } = matchedProps(this.props.queries, {
+      sm: { viewsToShow: 1 },
+      md: { viewsToShow: 2 },
+      lg: { viewsToShow: 3 }
+    })
+    return (
+      <div>
+        <span>{viewsToShow}</span>
+      </div>
+    )
+  }
+}
+MyResponsiveComponent = withComponentQueries(MyResponsiveComponent, {
+  sm: { minWidth: 300 },
+  md: { minWidth: 600 },
+  lg: { minWidth: 900 }
+})
+```
+
 ## Running Locally
 
 clone repo

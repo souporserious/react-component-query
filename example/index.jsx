@@ -14,20 +14,13 @@ const MyComponent = withComponentQueries(({ queries: { fullWidth } }) => (
   }
 })
 
-class MyOtherComponent extends Component {
+class MyResponsiveComponent extends Component {
   render() {
     const { viewsToShow } = matchedProps(this.props.queries, {
-      sm: {
-        viewsToShow: 1
-      },
-      md: {
-        viewsToShow: 2
-      },
-      lg: {
-        viewsToShow: 3
-      }
+      sm: { viewsToShow: 1 },
+      md: { viewsToShow: 2 },
+      lg: { viewsToShow: 3 }
     })
-
     return (
       <div>
         <span>{viewsToShow}</span>
@@ -35,7 +28,7 @@ class MyOtherComponent extends Component {
     )
   }
 }
-MyOtherComponent = withComponentQueries(MyOtherComponent, {
+MyResponsiveComponent = withComponentQueries(MyResponsiveComponent, {
   sm: { minWidth: 300 },
   md: { minWidth: 600 },
   lg: { minWidth: 900 }
@@ -46,7 +39,7 @@ class App extends Component {
     return (
       <div>
         <MyComponent/>
-        <MyOtherComponent/>
+        <MyResponsiveComponent/>
       </div>
     )
   }
