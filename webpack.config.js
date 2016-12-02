@@ -4,10 +4,6 @@ var TARGET = process.env.TARGET || null;
 
 var config = {
   entry: {
-    index: [
-      'webpack/hot/dev-server',
-      path.join(__dirname, 'example/index.jsx')
-    ]
   },
   output: {
     path: path.join(__dirname, 'example'),
@@ -30,11 +26,18 @@ var config = {
 };
 
 if (TARGET === 'minify') {
+  config.entry.index = path.join(__dirname, 'example/index.jsx');
+
   config.plugins.push(new webpack.optimize.UglifyJsPlugin({
     compress: {
       warnings: false
     }
   }));
+} else {
+  config.entry.index = [
+    'webpack/hot/dev-server',
+    path.join(__dirname, 'example/index.jsx')
+  ];
 }
 
 module.exports = config;
