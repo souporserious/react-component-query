@@ -14,7 +14,7 @@
     "postbuild": "NODE_ENV=production TARGET=minify webpack --config webpack.prod.config.js",
     "prebuild": "rm -rf dist && mkdir dist",
     "prepublish": "npm run build",
-    "deploy": "TARGET=minify webpack && git-directory-deploy --directory example --branch gh-pages"
+    "deploy": "NODE_ENV=production TARGET=minify webpack && git-directory-deploy --directory example --branch gh-pages"
   },
   "repository": {
     "type": "git",

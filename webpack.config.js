@@ -28,11 +28,25 @@ var config = {
 if (TARGET === 'minify') {
   config.entry.index = path.join(__dirname, 'example/index.jsx');
 
-  config.plugins.push(new webpack.optimize.UglifyJsPlugin({
-    compress: {
-      warnings: false
+  config.plugins.push(new webpack.DefinePlugin({
+    'process.env': {
+      NODE_ENV: JSON.stringify('production')
     }
-  }));
+  }))
+
+  config.plugins.push(new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        screw_ie8: true,
+        warnings: false
+      },
+      mangle: {
+        screw_ie8: true
+      },
+      output: {
+        comments: false,
+        screw_ie8: true
+      }
+    }));
 } else {
   config.entry.index = [
     'webpack/hot/dev-server',
