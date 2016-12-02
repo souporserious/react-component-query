@@ -31,6 +31,10 @@ amdefine@>=0.0.4:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.0.tgz#fd17474700cb5cc9c2b709f0be9d23ce3c198c33"
 
+animation-bus@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/animation-bus/-/animation-bus-0.2.0.tgz#43854c2c9463fb82c664eff0e19b9733081150fa"
+
 ansi-regex@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ansi-regex/-/ansi-regex-2.0.0.tgz#c5061b6e0ef8a81775e50f5d66151bf6bf371107"
@@ -912,10 +916,6 @@ Base64@~0.2.0:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/Base64/-/Base64-0.2.1.tgz#ba3a4230708e186705065e66babdd4c35cf60028"
 
-batch-processor@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/batch-processor/-/batch-processor-1.0.0.tgz#75c95c32b748e0850d10c2b168f6bdbe9891ace8"
-
 batch@0.5.3:
   version "0.5.3"
   resolved "https://registry.yarnpkg.com/batch/-/batch-0.5.3.tgz#3f3414f380321743bfc1042f9a83ff1d5824d464"
@@ -1551,12 +1551,6 @@ ee-first@1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
 
-element-resize-detector@^1.1.9:
-  version "1.1.9"
-  resolved "https://registry.yarnpkg.com/element-resize-detector/-/element-resize-detector-1.1.9.tgz#2304f5753165625eed17a7e953e25687e3b1d322"
-  dependencies:
-    batch-processor "^1.0.0"
-
 elliptic@^6.0.0:
   version "6.3.2"
   resolved "https://registry.yarnpkg.com/elliptic/-/elliptic-6.3.2.tgz#e4c81e0829cf0a65ab70e998b8232723b5c1bc48"
@@ -1891,9 +1885,13 @@ get-caller-file@^1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/get-caller-file/-/get-caller-file-1.0.2.tgz#f702e63127e7e231c160a80c1554acb70d5047e5"
 
-get-node-dimensions@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/get-node-dimensions/-/get-node-dimensions-1.1.0.tgz#daa71e9e017e916d9d19aaf3b0829b117e52b7a1"
+get-node-dimensions@^1.2.0:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/get-node-dimensions/-/get-node-dimensions-1.2.2.tgz#7a71e8624cf9e1ab74599bb05b7e5116e995e45b"
+
+get-prefix@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/get-prefix/-/get-prefix-1.0.0.tgz#0d305448a4e3176f9c277175b14e16dbe6fba0b5"
 
 get-stdin@^4.0.1:
   version "4.0.1"
@@ -2616,6 +2614,10 @@ minimist@0.0.8:
   version "0.0.8"
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-0.0.8.tgz#857fcabfc3397d2625b8228262e86aa7a011b05d"
 
+minivents@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/minivents/-/minivents-2.0.2.tgz#6ef3c0a28b0ae0341f72527bd90b9cda7151e921"
+
 mkdirp@^0.5.0, mkdirp@^0.5.1, "mkdirp@>=0.5 0", mkdirp@~0.5.0, mkdirp@~0.5.1, mkdirp@0.5.x:
   version "0.5.1"
   resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-0.5.1.tgz#30057438eac6cf7f8c4767f38648d6697d75c903"
@@ -2987,6 +2989,10 @@ pbkdf2@^3.0.3:
   dependencies:
     create-hmac "^1.1.2"
 
+performance-now@^0.2.0, performance-now@~0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-0.2.0.tgz#33ef30c5c77d4ea21c5a53869d91b56d8f2555e5"
+
 pify@^2.0.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/pify/-/pify-2.3.0.tgz#ed141a6ac043a849ea588498e7dca8b15330e90c"
@@ -3342,6 +3348,12 @@ querystringify@0.0.x:
   version "0.0.4"
   resolved "https://registry.yarnpkg.com/querystringify/-/querystringify-0.0.4.tgz#0cf7f84f9463ff0ae51c4c4b142d95be37724d9c"
 
+raf@^3.1.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/raf/-/raf-3.3.0.tgz#93845eeffc773f8129039f677f80a36044eee2c3"
+  dependencies:
+    performance-now "~0.2.0"
+
 randomatic@^1.1.3:
   version "1.1.5"
   resolved "https://registry.yarnpkg.com/randomatic/-/randomatic-1.1.5.tgz#5e9ef5f2d573c67bd2b8124ae90b5156e457840b"
@@ -3378,12 +3390,29 @@ react-height@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/react-height/-/react-height-2.1.1.tgz#14c27a8e3a7e43a17dd128c8f3ee00f03b0001c2"
 
-react-measure@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/react-measure/-/react-measure-1.2.0.tgz#241805c6190ae8ec75382d1b5a46ded7f0a6361c"
+react-measure:
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/react-measure/-/react-measure-1.4.2.tgz#c00ca741e159eb6920e915901dca20863f7c9a78"
   dependencies:
-    element-resize-detector "^1.1.9"
-    get-node-dimensions "^1.1.0"
+    get-node-dimensions "^1.2.0"
+    resize-observer-polyfill "^1.2.1"
+
+react-motion@^0.4.5:
+  version "0.4.5"
+  resolved "https://registry.yarnpkg.com/react-motion/-/react-motion-0.4.5.tgz#ecc42f692fec9b2de4c92f85e26375071f779b76"
+  dependencies:
+    performance-now "^0.2.0"
+    raf "^3.1.0"
+
+react-view-pager:
+  version "0.5.0-prerelease.7"
+  resolved "https://registry.yarnpkg.com/react-view-pager/-/react-view-pager-0.5.0-prerelease.7.tgz#ec156706f71ac4f3534cd94d71eecb1e14d91ad3"
+  dependencies:
+    animation-bus "^0.2.0"
+    get-prefix "^1.0.0"
+    minivents "^2.0.2"
+    react-motion "^0.4.5"
+    resize-observer-polyfill "^1.2.1"
 
 react@15.3.2:
   version "15.3.2"
@@ -3568,6 +3597,10 @@ require-main-filename@^1.0.1:
 requires-port@1.0.x, requires-port@1.x.x:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/requires-port/-/requires-port-1.0.0.tgz#925d2601d39ac485e091cf0da5c6e694dc3dcaff"
+
+resize-observer-polyfill@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/resize-observer-polyfill/-/resize-observer-polyfill-1.2.1.tgz#55a4ff3e4f212a76470835fb7590dbb62a3e6542"
 
 right-align@^0.1.1:
   version "0.1.3"

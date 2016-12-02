@@ -3,7 +3,13 @@
 [![npm version](https://badge.fury.io/js/react-component-query.svg)](https://badge.fury.io/js/react-component-query)
 [![Dependency Status](https://david-dm.org/souporserious/react-component-query.svg)](https://david-dm.org/souporserious/react-component-query)
 
-This library is heavily inspired by [React Container Query](https://github.com/d6u/react-container-query). This version uses [React Measure](https://github.com/souporserious/react-measure) under the hood to detect component changes. It provides matching queries and component dimensions.
+True component queries 🎉
+
+Write one query and drop the mic 🎙
+
+You're going to love it 👌
+
+Uses [React Measure](https://github.com/souporserious/react-measure) to detect component changes and return matched queries, matched props, and component dimensions.
 
 ## Usage
 
@@ -17,27 +23,63 @@ This library is heavily inspired by [React Container Query](https://github.com/d
 ## Example Usage
 
 ```js
-import { matchedProps, withComponentQueries } from 'react-component-query'
+import React, { Component } from 'react'
+import { withComponentQueries } from 'react-component-query'
+import { ViewPager, Frame, Track, View } from 'react-view-pager'
 
-class MyResponsiveComponent extends Component {
+const componentQueries = [{
+  name: 'sm',
+  breakpoint: {
+    minWidth: 0
+  },
+  props: {
+    viewsToShow: 1
+  }
+}, {
+  name: 'md',
+  breakpoint: {
+    minWidth: 375
+  },
+  props: {
+    viewsToShow: 2
+  }
+}, {
+  name: 'lg',
+  breakpoint: {
+    minWidth: 800
+  },
+  props: {
+    viewsToShow: 3
+  }
+}]
+
+class Slider extends Component {
   render() {
-    const { viewsToShow } = matchedProps(this.props.queries, {
-      sm: { viewsToShow: 1 },
-      md: { viewsToShow: 2 },
-      lg: { viewsToShow: 3 }
-    })
+    const { matchedQueries, matchedProps, dimensions } = this.props
+    const { sm, md, lg } = matchedQueries
+    const { viewsToShow, swipe } = matchedProps
+    const { width, height, top, right, bottom, left } = dimensions
     return (
-      <div>
-        <span>{viewsToShow}</span>
-      </div>
+      <ViewPager>
+        <Frame>
+          <Track
+            viewsToShow={viewsToShow}
+            viewsToMove={viewsToShow}
+            contain
+          >
+            {[0, 1, 2, 3, 4, 5].map(index =>
+              <View key={index}>
+                {index + 1}
+              </View>
+            )}
+          </Track>
+        </Frame>
+      </ViewPager>
     )
   }
 }
-MyResponsiveComponent = withComponentQueries(MyResponsiveComponent, {
-  sm: { minWidth: 300 },
-  md: { minWidth: 600 },
-  lg: { minWidth: 900 }
-})
+
+export default withComponentQueries(Slider, componentQueries)
 ```
 
 ## Running Locally
@@ -59,3 +101,7 @@ run dev mode
 `npm run dev`
 
 open your browser and visit: `http://localhost:8080/`
+
+## Thank You
+
+Initial inspiration for this library came from [React Container Query](https://github.com/d6u/react-container-query).

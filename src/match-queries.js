@@ -1,30 +1,34 @@
-import toPairs from './to-pairs'
+export default function matchQueries(queries, { width, height }) {
+  let matchedQueries = {}
+  let matchedProps = {}
 
-export default function matchQueries(queries) {
-  const rules = []
+  queries.forEach(({
+    name,
+    breakpoint: {
+      minWidth = 0,
+      maxWidth = Infinity,
+      minHeight = 0,
+      maxHeight = Infinity
+    },
+    props
+  }) => {
+    const queryMatched = (
+      minWidth <= width && width <= maxWidth &&
+      minHeight <= height && height <= maxHeight
+    )
 
-  toPairs(queries).forEach(([selectorName, { minWidth, maxWidth, minHeight, maxHeight }]) => {
-    rules.push([
-      selectorName,
-      {
-        minWidth: minWidth || 0,
-        maxWidth: maxWidth || Infinity,
-        minHeight: minHeight || 0,
-        maxHeight: maxHeight || Infinity
+    matchedQueries[name] = queryMatched
+
+    if (queryMatched && props) {
+      matchedProps = {
+        ...matchedProps,
+        ...props
       }
-    ])
+    }
   })
 
-  return function ({ width, height }) {
-    const selectorMap = {}
-
-    rules.forEach(([selectorName, { minWidth, maxWidth, minHeight, maxHeight }]) => {
-      selectorMap[selectorName] = (
-        minWidth <= width && width <= maxWidth &&
-        minHeight <= height && height <= maxHeight
-      )
-    })
-
-    return selectorMap
+  return {
+    matchedQueries,
+    matchedProps
   }
 }

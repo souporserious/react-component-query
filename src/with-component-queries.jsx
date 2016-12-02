@@ -5,13 +5,16 @@ import matchQueries from './match-queries'
 export default function withComponentQueries(ComposedComponent, queries) {
   return class extends Component {
     state = {
-      queries: {},
+      matchedQueries: {},
+      matchedProps: {},
       dimensions: {}
     }
 
     _handleMeasure = (dimensions) => {
+      const { matchedQueries, matchedProps } = matchQueries(queries, dimensions)
       this.setState({
-        queries: matchQueries(queries)(dimensions),
+        matchedQueries,
+        matchedProps,
         dimensions
       })
     }
