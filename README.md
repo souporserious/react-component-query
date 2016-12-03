@@ -119,7 +119,7 @@ Each object in the queries array requires at least two properties: `name` and `b
 | ------------- | --------- | ----------------- |
 | `name`        | `String`  | (required) The name of the query
 | `breakpoint`  | `Object`  | (required) An object of constraints `{ minWidth, maxWidth, minHeight, maxHeight }`|
-| `props`       | `String`  | (optional) Any props to be matched against this breakpoint. Last prop in range returned in `matchedProps` |
+| `props`       | `Object`  | (optional) Any props to be matched against this breakpoint. Last prop in range returned in `matchedProps` |
 
 ## matchedQueries
 
