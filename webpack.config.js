@@ -12,7 +12,7 @@ var config = {
   module: {
     loaders: [
       { test: /\.(js|jsx)/, exclude: /node_modules/, loader: 'babel-loader' },
-      { test: /\.scss$/, loader: 'style!css!postcss!sass?sourceMap' }
+      { test: /\.(css|scss)/, loader: 'style!css!postcss!sass?sourceMap' }
     ]
   },
   resolve: {

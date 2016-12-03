@@ -3400,6 +3400,10 @@ react-dom@15.3.2:
   version "15.3.2"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-15.3.2.tgz#c46b0aa5380d7b838e7a59c4a7beff2ed315531f"
 
+react-github-button:
+  version "0.1.10"
+  resolved "https://registry.yarnpkg.com/react-github-button/-/react-github-button-0.1.10.tgz#0228c06ad918f6898f92350e4a0567aaaa79349c"
+
 react-hot-api@^0.4.5:
   version "0.4.7"
   resolved "https://registry.yarnpkg.com/react-hot-api/-/react-hot-api-0.4.7.tgz#a7e22a56d252e11abd9366b61264cf4492c58171"
