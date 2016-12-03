@@ -11,6 +11,8 @@ You're going to love it 👌
 
 Uses [React Measure](https://github.com/souporserious/react-measure) to detect component changes and return matched queries, matched props, and component dimensions.
 
+Check out the [demo page](https://souporserious.github.io/react-component-query/) to see it in action.
+
 ## Usage
 
 `npm install react-component-query --save`
